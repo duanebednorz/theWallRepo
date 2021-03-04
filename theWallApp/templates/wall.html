@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
+    <title>The Wall</title>
+  </head>
+  <body>
+    <div class="header">
+        <h1>The Wall</h1>
+        <h1>Welcome: {{loggedInUser.firstName}}</h1>
+        <a class="logout" href="/logout"><button> Logout</button></a>
+      </div>
+      <br>
+    <div class="container">
+      <div class="addMessage">
+        <h2> Post a new Message</h2>
+        <br>
+        <form action="/addMessage" method="post">
+          {% csrf_token %}
+          <textarea  name="postMessage" id="" cols="60" rows="7"></textarea>
+          <br />
+          <input class ="postMessageButton" type="submit" value="Post Message" />
+      </div>
+    </div>
+    <br>
+    <h1 class ="allMessages">All Messages</h1>
+    <br>
+    {% for message in allMessage %}
+    <div class="messageDiv">     
+        <h3> Posted by: {{message.user.firstName}}</h3>
+        <br>
+        <p class = "timestamp">Created:{{message.user.created_at}}</p>
+        <p  class = "message">{{message.message}}</p>
+        {% for comment in message.wallComments.all %}
+        <p class = "commentTime">{{comment.created_at}}</p>
+        <p  class = "comment">{{comment.poster.firstName}} says: {{comment.comment}}</p>
+        {% endfor %}    
+        <p class = "likes"><img src="/static/img/thumbsUp.JPG" class = "likeIMG" alt=""> {{ message.users_who_like.all|length }}</p>
+        <p class = "dislikes"> <img src="/static/img/thumbsDown.JPG" class = "dislikeIMG"alt=""> {{ message.users_who_dislike.all|length }}</p>
+        <br>
+        </form>
+        {% if message.user != loggedInUser %}
+        <a  href="/likeMessage/{{message.id}}"
+            ><button class = "likeButton">Like</button></a>
+            {% endif %}
+        {% if message.user != loggedInUser %}
+        <a href="/dislikeMessage/{{message.id}}"
+            ><button class = "dislikeButton">Dislike</button></a>
+        {% endif %}
+        {% if message.user == loggedInUser %}
+        <a href="/deleteMessage/{{message.id}}"
+            ><button class = "deleteButton" >Delete Entire Message</button></a>
+            {% endif %}
+        <form action="/addComment/{{message.id}}" method="post">
+            {% csrf_token %}
+          <br>
+          <input class="inputTXT" type="text" name="postComment" id="">
+          <input type="submit" value="Comment"/>
+        </form>
+    </div>
+    {% endfor %}
+    <br>
+  </body>
+</html>

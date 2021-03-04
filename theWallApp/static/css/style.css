@@ -1,0 +1,170 @@
+  /* body * {
+    border: green solid 2px;
+}  */
+
+* body {
+    background-color: rgb(217, 226, 230);
+}
+
+.container {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+}
+.header {
+    border-radius: 25px;
+    background-color: lightseagreen;
+    border: solid 2px darkviolet;
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.registration {
+  padding: 20px;
+  border: solid green 2px;
+}
+
+.login {
+  padding: 20px;
+  border: solid green 2px;
+}
+
+.logout {
+    margin-left: 90%;
+    padding-bottom: 20px;
+}
+
+.messageDiv {
+  margin: 0 auto;
+  width: 900px;
+  display: block;
+  border:mediumblue solid 2px;
+  padding: 20px;
+}
+
+p {
+  width: fit-content;
+}
+
+h3 {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.timestamp {
+  margin: 0 auto;
+}
+
+.likes {
+  display: inline-block;
+}
+
+.dislikes {
+  display: inline-block;
+}
+
+.likeButton {
+  display: inline-block;
+}
+
+.dislikeButton {
+  display: inline-block;
+}
+
+.likeIMG {
+  max-height: 35px;
+  max-width: 35px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.dislikeIMG {
+    max-height: 35px;
+    max-width: 35px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+  }
+  .commentTime {
+      margin-left: 20%;
+  }
+  .comment {
+      margin: 0 auto;
+      color: brown;
+      border-radius: 28px;
+      background-color: lightgreen;
+      border:lightgreen solid 5px;
+  }
+  .deleteButton {
+      margin-left: 10%;
+      background-color: red;
+      color: white;
+      border-radius: 28px;
+  }
+  .message {
+      margin-left: 10%;
+      color: blue;
+      border-radius: 28px;
+      border:lightgray solid 5px;
+      background-color: lightgray;
+
+  }
+
+  h1 {
+      width: 500px;
+      margin-left: 17%;
+      text-shadow: 1.5px 1.5px;
+      border-radius: 25px;
+      text-align: center;
+      background-color: coral;
+      color: wheat;
+      border: solid 2px green;
+  }
+  h2 {
+    text-shadow: 1.5px 1.5px;
+    border-radius: 25px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    background-color: lightcoral;
+    border:solid 2px red;
+    padding: 5px;
+  }
+
+  .allMessages {
+      margin: 0 auto;
+      text-align: center;
+      
+  }
+  .postMessageButton {
+      margin-left: 70%;
+  }
+  
+ 
+  .addMessage{
+    border-radius: 25px;
+    background-color: lightgoldenrodyellow;
+    border: solid 2px darkred;
+    padding: 20px;
+  }
+
+  .messageDiv{
+    border-radius: 25px;
+    background-color: lightgoldenrodyellow;
+    width:700px;
+  }
+  .inputTXT {
+      margin-left: 49%;
+      padding: 10px;
+      margin-bottom: 2%;
+  }
+
+  input[type="text"], textarea {
+
+    background-color : whitesmoke; 
+    padding: 10px;
+  
+  }
